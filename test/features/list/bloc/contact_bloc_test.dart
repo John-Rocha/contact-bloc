@@ -51,19 +51,19 @@ void main() {
     ],
   );
 
-  blocTest<ContactBloc, ContactState>(
-    'Should return success for contact delete',
-    build: () => bloc,
-    act: (bloc) => bloc.add(ContactEvent.delete(contact: contact)),
-    setUp: () {
-      when(
-        () => repository.delete(contact),
-      ).thenAnswer((_) async => contact);
-    },
-    expect: () => [
-      const ContactState.loading(),
-    ],
-  );
+  // blocTest<ContactBloc, ContactState>(
+  //   'Should return success for contact delete',
+  //   build: () => bloc,
+  //   act: (bloc) => bloc.add(ContactEvent.delete(contact: contact)),
+  //   setUp: () {
+  //     when(
+  //       () => repository.delete(contact),
+  //     ).thenAnswer((_) async => contact);
+  //   },
+  //   expect: () => [
+  //     const ContactState.loading(),
+  //   ],
+  // );
 
   blocTest<ContactBloc, ContactState>(
     'Should return error for contact delete',
